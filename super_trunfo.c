@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-    int populacao;
+    unsigned long int populacao;
     int pontoT;
     float pib;
     float area;
@@ -10,8 +10,9 @@ int main(){
     char estado[50];
     int densidade1;
     int percapta1;
-
-    int populacao2;
+    float superpoderA;
+    
+    unsigned long int populacao2;
     int pontoT2;
     float pib2;
     float area2;
@@ -20,6 +21,8 @@ int main(){
     char estado2[50];
     int densidade2;
     int percapta2;
+    float superpoderB;
+    long int resultado;
 
     printf ("Bem vindo ao super trunfo, informe os dados requisitados!\n");
 
@@ -33,7 +36,7 @@ int main(){
     scanf(" %49[^\n]", cidade);
 
     printf("Qual a populacao: \n");
-    scanf("%d", &populacao);
+    scanf("%u", &populacao);
 
     printf("qual area em km²: \n");
     scanf("%f", &area);
@@ -61,7 +64,7 @@ int main(){
     scanf(" %49[^\n]", cidade2);
 
     printf("Qual a populacao: \n");
-    scanf("%d", &populacao2);
+    scanf("%u", &populacao2);
 
     printf("qual area em km²: \n");
     scanf("%f", &area2);
@@ -74,18 +77,23 @@ int main(){
     
     percapta2 = pib2 / populacao2;
     
-    
-    
     densidade2 = populacao2 / area2;
+
+    
+
+    superpoderA = populacao + pib + pontoT + percapta1 + densidade1;
+    superpoderB = populacao2 + pib2 + pontoT2 + percapta2 + densidade2;
+
+    resultado = superpoderA>superpoderB;
+
+    printf("%ld", resultado);
+    
+    
+
+    
   
-
     
-    
-    printf("Carta 1:\n Estado: %s\n Codigo: %s\n Nome da cidade: %s\n Populacao: %d\n Area: %f\n Pib: %f\n Numero de pontos turisticos: %d\n Pibpercapta: %d\n Densidade populacional: %d\n", estado, codcarta, cidade, populacao, area, pib, pontoT, percapta1, densidade1);
-
-    printf("\nCarta 2:\n Estado: %s\n Codigo: %s\n Nome da cidade: %s\n Populacao: %d\n Area: %f\n Pib: %f\n Numero de pontos turisticos: %d\n Pibpercapta: %d\n Densidade populacional: %d\n", estado2, codcarta2, cidade2, populacao2, area2, pib2, pontoT2, pib2, densidade2);
-
-    
+  
     return 0;
 
 
