@@ -84,9 +84,13 @@ int main(){
     superpoderA = populacao + pib + pontoT + percapta1 + densidade1;
     superpoderB = populacao2 + pib2 + pontoT2 + percapta2 + densidade2;
 
-    resultado = superpoderA>superpoderB;
+    if(superpoderA>superpoderB){
+        printf("cidade A ganhou");
+    } else {
+        printf("Cidade B ganhou");
+    }
 
-    printf("%ld", resultado);
+    
     
     
 
